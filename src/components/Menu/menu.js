@@ -1,38 +1,34 @@
-
 // Biblioteca
 import styled from "styled-components";
 
-const MenuContainer = styled.ul`
+const OpcoesMenu = styled.ul`
   display: flex;
   list-style: none;
   gap: 30px;
 `;
 
-const Opcoes = styled.li`
+const Opcao = styled.li`
   text-transform: uppercase;
   color: #002f52;
   font-size: 18px;
   font-weight: 400;
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 `;
-
-
-
 
 function Menu() {
   const options = ["Categoria", "Favoritos", "Minha Estante"];
 
   return (
-    <MenuContainer className="menu">
+    <OpcoesMenu className="menu">
       {options.map((option) => (
-        <Opcoes className="optns">
+        <Opcao className="optns">
           <a href="#">{option}</a>
-        </Opcoes>
+        </Opcao>
       ))}
-    </MenuContainer>
+    </OpcoesMenu>
   );
 }
 
