@@ -9,7 +9,7 @@ import Button from "../Botao";
 // Estilização
 const SectionBuscar = styled.section`
   width: 80%;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -39,10 +39,15 @@ const AreaPesquisa = styled.div`
 `;
 
 const LivrosContainer = styled.div`
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(6, auto);
   gap: 20px;
   margin-top: 30px;
+
+  img{
+    height: 300px;
+  }
 `;
 
 function Buscador() {
