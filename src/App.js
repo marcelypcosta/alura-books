@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 // Components
-import Header from "./components/Header/header";
+import Header from "./components/Header";
 import Buscador from "./components/Buscador";
 
 const AppContainer = styled.div`

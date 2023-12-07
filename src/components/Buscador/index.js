@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 // Components
 import Input from "../Input";
-
+import BotaoBuscar from "../BotaoBuscar";
 
 // Estilização
 const SectionBuscar = styled.section`
@@ -39,7 +39,18 @@ const LivrosContainer = styled.div`
 `;
 
 function Buscador() {
-  const [pesquisaLivros, setpesquisaLivros] = useState([]);
+  const [livrosDisponiveis, setLivrosDisponiveis] = useState([]);
+  const [pesquisaLivro, setPesquisaLivro] = useState("");
+
+  const txt = (event) => {
+    setPesquisaLivro(event.target.value);
+  };
+
+  const pesquisa = () => {
+    const livroPesquisado = livros.filter((livro) => livro.nome.includes(pesquisaLivro));
+
+    setLivrosDisponiveis(livroPesquisado);
+  };
 
   return (
     <SectionBuscar>
@@ -47,18 +58,13 @@ function Buscador() {
       <Subtitulo>Encontre seu livro em nossa estante.</Subtitulo>
       <Input
         placeholder="Pesquise aqui seu próximo livro..."
-        onBlur={(event) => {
-          const txt = event.target.value;
-          const livroPesquisado = livros.filter((livro) =>
-            livro.nome.includes(txt)
-          );
-
-          setpesquisaLivros(livroPesquisado);
-        }}
+        value={pesquisaLivro}
+        onChange={txt}
       />
+      <BotaoBuscar onClick={pesquisa}>Pesquisar</BotaoBuscar>
       <LivrosContainer>
-        {pesquisaLivros.map((livro) => (
-          <img src={livro.img} />
+        {livrosDisponiveis.map((livro) => (
+          <img key={livro.id} src={livro.img} alt={livro.nome} />
         ))}
       </LivrosContainer>
     </SectionBuscar>

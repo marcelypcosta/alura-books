@@ -2,9 +2,9 @@
 import styled from "styled-components";
 
 // Components
-import Logo from "../Logo/logo";
-import Menu from "../Menu/menu";
-import Perfil from "../Perfil/perfil";
+import Logo from "../Logo";
+import Menu from "../Menu";
+import Perfil from "../Perfil";
 
 const HeaderContainer = styled.div`
     background-color: #fff;
