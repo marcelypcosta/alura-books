@@ -1,6 +1,3 @@
-// CSS
-import "./css/reset.css";
-
 // Biblioteca
 import styled from "styled-components";
 
