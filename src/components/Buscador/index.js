@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 // Components
 import Input from "../Input";
-import Button from "../Botao";
+import { Botao } from "../Botao";
 
 // Estilização
 const SectionBuscar = styled.section`
@@ -45,7 +45,7 @@ const LivrosContainer = styled.div`
   gap: 20px;
   margin-top: 30px;
 
-  img{
+  img {
     height: 300px;
   }
 `;
@@ -76,9 +76,10 @@ function Buscador() {
           value={pesquisaLivro}
           onChange={txt}
         />
-        <Button onClick={pesquisa}>Pesquisar</Button>
+        <Botao cor="#eb9b00" onClick={pesquisa}>
+          Pesquisar
+        </Botao>
       </AreaPesquisa>
-
       <LivrosContainer>
         {livrosDisponiveis.map((livro) => (
           <img key={livro.id} src={livro.img} alt={livro.nome} />
