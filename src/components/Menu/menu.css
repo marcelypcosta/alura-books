@@ -1,0 +1,16 @@
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.optns {
+    text-transform: uppercase;
+    color: #002F52;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.optns:hover {
+    text-decoration: underline;
+}

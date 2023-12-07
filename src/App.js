@@ -1,8 +1,9 @@
-import "./assets/css/App.css";
-import "./assets/css/reset.css";
+// CSS
+import "./css/App.css";
+import "./css/reset.css";
 
-// Componets
-import Header from "./components/header";
+// Components
+import Header from "./components/Header/header";
 
 function App() {
   return (
