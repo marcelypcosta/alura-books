@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { livros } from "./dados";
-
-//Biblioteca
 import styled from "styled-components";
 
 // Components
 import Input from "../Input";
-import BotaoBuscar from "../BotaoBuscar";
+import Button from "../Botao";
 
 // Estilização
 const SectionBuscar = styled.section`
@@ -31,6 +29,15 @@ const Subtitulo = styled.h3`
   color: #fff;
 `;
 
+const AreaPesquisa = styled.div`
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  align-items: center;
+`;
+
 const LivrosContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -47,7 +54,9 @@ function Buscador() {
   };
 
   const pesquisa = () => {
-    const livroPesquisado = livros.filter((livro) => livro.nome.includes(pesquisaLivro));
+    const livroPesquisado = livros.filter((livro) =>
+      livro.nome.includes(pesquisaLivro)
+    );
 
     setLivrosDisponiveis(livroPesquisado);
   };
@@ -56,12 +65,15 @@ function Buscador() {
     <SectionBuscar>
       <Titulo>Já sabe por onde começar?</Titulo>
       <Subtitulo>Encontre seu livro em nossa estante.</Subtitulo>
-      <Input
-        placeholder="Pesquise aqui seu próximo livro..."
-        value={pesquisaLivro}
-        onChange={txt}
-      />
-      <BotaoBuscar onClick={pesquisa}>Pesquisar</BotaoBuscar>
+      <AreaPesquisa>
+        <Input
+          placeholder="Pesquise aqui seu próximo livro..."
+          value={pesquisaLivro}
+          onChange={txt}
+        />
+        <Button onClick={pesquisa}>Pesquisar</Button>
+      </AreaPesquisa>
+
       <LivrosContainer>
         {livrosDisponiveis.map((livro) => (
           <img key={livro.id} src={livro.img} alt={livro.nome} />
