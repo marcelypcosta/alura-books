@@ -1,17 +1,33 @@
-import "./perfil.css"
+// Biblioteca
+import styled from "styled-components";
+
+// Imagens
 import perfil from "../assets/imgs/perfil.svg";
 import sacola from "../assets/imgs/sacola.svg";
 
-function Perfil(){
-    const icons = [perfil, sacola];
+const Icones = styled.div`
+  display: flex;
+  gap: 20px;
+`;
 
-    return(
-        <div className="icons">
-        {icons.map((icone) => (
-          <a href="#"><img className="icons" src={icone} /></a>
-        ))}
-      </div>
-    )
+const Icone = styled.li`
+  list-style: none;
+`;
+
+function Perfil() {
+  const icons = [perfil, sacola];
+
+  return (
+    <Icones className="icons">
+      {icons.map((icone) => (
+        <Icone>
+          <a href="#">
+            <img src={icone} />
+          </a>
+        </Icone>
+      ))}
+    </Icones>
+  );
 }
 
 export default Perfil;
