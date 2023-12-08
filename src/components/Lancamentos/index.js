@@ -15,8 +15,8 @@ const LivrosDisponiveis = styled.div`
   display: grid;
   grid-template-columns: repeat(6, auto);
   justify-content: center;
+  padding: 16px;
   gap: 30px;
-  padding: 64px;
 
   img:hover {
     cursor: pointer;
@@ -25,6 +25,7 @@ const LivrosDisponiveis = styled.div`
 
 const LancamentosContainer = styled.div`
 background-color: #ebecee;
+  padding: 20px 0;
 `
 
 function Lancamentos() {

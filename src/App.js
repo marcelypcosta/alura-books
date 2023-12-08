@@ -8,7 +8,7 @@ import Lancamentos from "./components/Lancamentos"
 
 const AppContainer = styled.div`
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
+  /* width: 100%; */
   background-image: linear-gradient(90deg, #002f52 35%, #326589);
 `;
 
